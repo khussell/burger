@@ -13,7 +13,7 @@
     {{else}}
     <li>
         <h3>{{id}}. {{burger_name}}</h3>
-        <button class="devour" data-id="{{id}}">Devour it!</button>
+        <button class="devour" data-id="{{id}}" data-devoured="false">Devour it!</button>
     </li>
     {{/if}}
     {{/each}}
@@ -25,7 +25,7 @@
     {{#if devoured}}
     <li>
         <h3>{{id}}. {{burger_name}}</h3>
-        <button class="remake" data-id="{{id}}">Remake Burger!</button>
+        <button class="remake" data-id="{{id}}" data-devoured="true">Remake Burger!</button>
     </li>
     {{/if}}
     {{/each}}

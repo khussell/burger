@@ -21,8 +21,15 @@ var orm = {
      })
   },
 
-  updateOne : function(table, col, val, cb){
-      var queryString = "UPDATE " + table + " SET " + col + " = true WHERE id = " + val
+  updateOne : function(table, col, val, val2, cb){
+      var whatNow = val2
+      if(whatNow === "true"){
+          whatNow = "false"
+      }else{
+          whatNow = "true"
+      }
+      console.log(whatNow)
+      var queryString = "UPDATE " + table + " SET " + col + " = " + whatNow +" WHERE id = " + val
       console.log(queryString)
       connection.query(queryString, function(err, result){
           if (err) throw err
