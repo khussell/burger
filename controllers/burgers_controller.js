@@ -16,6 +16,17 @@ router.post("/api/burgers/:newBurger", function(req,res){
     })
 })
 
+router.put("/api/burgers/:id", function(req,res){
+    var id = req.params.id
+    burger.updateOne("devoured", id, function(result){
+        if (result.changedRows == 0) {
+            return res.status(404).end();
+          } else {
+            res.status(200).end();
+          }
+    })
+})
+
 
 //exporting routes for server.js to use
 module.exports = router;

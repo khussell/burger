@@ -8,21 +8,25 @@
 
 <ul>
     <h1>Not Eaten</h1>
-{{#each burgers}}
-  {{#if devoured}}
-     {{else}}
-     
-      <h3>{{id}}. {{burger_name}}</h3>
-      <button>Devour it!</button>
-      {{/if}}
-{{/each}}
+    {{#each burgers}}
+    {{#if devoured}}
+    {{else}}
+    <li>
+        <h3>{{id}}. {{burger_name}}</h3>
+        <button class="devour" data-id="{{id}}">Devour it!</button>
+    </li>
+    {{/if}}
+    {{/each}}
 </ul>
 
-<ol>
+<ul>
     <h1>Eaten</h1>
     {{#each burgers}}
-     {{#if devoured}}
-      <h3>{{id}}. {{burger_name}}</h3>
-      {{/if}}
+    {{#if devoured}}
+    <li>
+        <h3>{{id}}. {{burger_name}}</h3>
+        <button class="remake" data-id="{{id}}">Remake Burger!</button>
+    </li>
+    {{/if}}
     {{/each}}
-</ol>
+</ul>

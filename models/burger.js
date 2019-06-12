@@ -13,8 +13,10 @@ insertOne : function(col,val,cb){
   })
 },
 
-updateOne : function(cb){
-  orm.updateOne()
+updateOne : function(col, val, cb){
+  orm.updateOne("burgers", col, val, function(res){
+      cb(res)
+  })
 }
 }
 

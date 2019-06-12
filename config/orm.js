@@ -10,16 +10,24 @@ var orm = {
   },
 
   insertOne : function(table, col, val, cb){
-    var queryString = "INSERT INTO ?? (" + col +") VALUES ?"
+     var queryString = "INSERT INTO " + table + "(" + col + ") VALUES (?)"
+    val= val.toString()
+    console.log(val)
+    console.log(queryString)
 
-     connection.query(queryString, [table, val], function(err, result){
+     connection.query(queryString, val, function(err, result){
          if(err) throw err;
          cb(result)
      })
   },
 
-  updateOne : function(){
-
+  updateOne : function(table, col, val, cb){
+      var queryString = "UPDATE " + table + " SET " + col + " = true WHERE id = " + val
+      console.log(queryString)
+      connection.query(queryString, function(err, result){
+          if (err) throw err
+          cb(result)
+      })
   }
 }
 
