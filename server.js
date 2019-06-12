@@ -1,0 +1,21 @@
+var express = require("express")
+var expressHandlebars = require("express-handlebars")
+
+var PORT = process.env.PORT || 8020;
+
+var app = express()
+
+app.use(express.static("public"));
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.engine("handlebars", expressHandlebars({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
+app.listen(PORT, function(){
+    console.log("Listening")
+})
+
+var routes = require("./controllers/burgers_controller.js")
+app.use(routes)
