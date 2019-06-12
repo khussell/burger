@@ -1,0 +1,28 @@
+<h1>Eat-Da-Burger</h1>
+
+<form>
+    <label for="whatBurger">Enter a type of burger you would like to eat:</label>
+    <input type="text" id="whatBurger">
+    <button type="submit" id="submitBurger">Submit</button>
+</form>
+
+<ul>
+    <h1>Not Eaten</h1>
+{{#each burgers}}
+  {{#if devoured}}
+     {{else}}
+     
+      <h3>{{id}}. {{burger_name}}</h3>
+      <button>Devour it!</button>
+      {{/if}}
+{{/each}}
+</ul>
+
+<ol>
+    <h1>Eaten</h1>
+    {{#each burgers}}
+     {{#if devoured}}
+      <h3>{{id}}. {{burger_name}}</h3>
+      {{/if}}
+    {{/each}}
+</ol>
