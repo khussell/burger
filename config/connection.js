@@ -10,7 +10,7 @@ else {
     port: 3306,
     user: "root",
     password: "flamingo3",
-    database: "yxdtrwr60e87syut"
+    database: "burgers_db"
   });
 
   // Make connection.
