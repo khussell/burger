@@ -13,7 +13,7 @@ body{
 ul{
     font-family: 'Roboto', sans-serif;
     background-color: rgb(255, 255, 255,0.85);
-    width: 400px;
+    width: 500px;
     list-style: none;
     margin: 0 auto;
     float: left;
@@ -24,6 +24,7 @@ ul{
 }
 
 li{
+    text-align: left;
     font-size: 17px;
     padding: 15px;
     
@@ -31,7 +32,7 @@ li{
 
 .ul{
     margin: 0 auto;
-    width: 1000px;
+    width: 1200px;
     height: 530px;
     margin-top: 40px;
    
