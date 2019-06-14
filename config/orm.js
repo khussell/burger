@@ -9,6 +9,8 @@ var orm = {
     })
   },
 
+
+
   insertOne : function(table, col, val, cb){
      var queryString = "INSERT INTO " + table + "(" + col + ") VALUES (?)"
     val= val.toString()
